@@ -496,6 +496,57 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+  <script>
+  let pendingImageSrc = null;
+
+  function shouldShowPriceNotice() {
+    const saved = localStorage.getItem('hidePriceNoticeUntil');
+    if (!saved) return true;
+    return Date.now() > Number(saved);
+  }
+
+  function showPriceNotice(imgSrc) {
+    pendingImageSrc = imgSrc;
+    const popup = document.getElementById('priceNoticePopup');
+    if (popup) {
+      popup.style.display = 'flex';
+    }
+  }
+
+  function closePriceNotice() {
+    const popup = document.getElementById('priceNoticePopup');
+    if (popup) {
+      popup.style.display = 'none';
+    }
+
+    if (pendingImageSrc) {
+      openRealImageModal(pendingImageSrc);
+      pendingImageSrc = null;
+    }
+  }
+
+  function hidePriceNoticeToday() {
+    const tomorrow = Date.now() + (24 * 60 * 60 * 1000);
+    localStorage.setItem('hidePriceNoticeUntil', String(tomorrow));
+    closePriceNotice();
+  }
+
+  function openRealImageModal(imgSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+
+    if (modal && modalImg) {
+      modalImg.src = imgSrc;
+      modal.style.display = 'flex';
+    }
+  }
+  function openImageModal(imgSrc) {
+  if (shouldShowPriceNotice()) {
+    showPriceNotice(imgSrc);
+  } else {
+    openRealImageModal(imgSrc);
+  }
+}
 </script>
   <!-- 안내 팝업 -->
 <div id="priceNoticePopup" class="notice-popup" style="display:none;">
