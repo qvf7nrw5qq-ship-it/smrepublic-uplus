@@ -456,20 +456,30 @@ function openNoticeThenModal(imgSrc) {
 
   if (shouldHidePriceNoticeToday()) {
     openImageModal(nextModalImage);
+    return;
+  }
+
+  const popup = document.getElementById("priceNoticePopup");
+
+  if (popup) {
+    popup.style.display = "flex";
   } else {
-    document.getElementById("priceNoticePopup").style.display = "flex";
+    alert("안내 팝업 HTML 없음");
   }
 }
 
 function closePriceNoticePopup() {
   const checkbox = document.getElementById("hidePriceNoticeToday");
+  const popup = document.getElementById("priceNoticePopup");
 
   if (checkbox && checkbox.checked) {
     const today = new Date().toISOString().slice(0, 10);
     localStorage.setItem("hidePriceNoticeDate", today);
   }
 
-  document.getElementById("priceNoticePopup").style.display = "none";
+  if (popup) {
+    popup.style.display = "none";
+  }
 
   if (nextModalImage) {
     openImageModal(nextModalImage);
