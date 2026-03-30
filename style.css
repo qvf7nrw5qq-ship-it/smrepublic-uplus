@@ -2149,121 +2149,14 @@ padding:80px 20px;
   border-radius: 12px;
 }
 
-/* 👇 마우스 올렸을 때 */
+/* 마우스 올렸을 때 */
 .qr_frame a:hover img {
   transform: scale(1.07);
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* 👇 클릭할 때 */
+/* 클릭할 때 */
 .qr_frame a:active img {
   transform: scale(0.96);
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-}
-.qr-link {
-  display: inline-block;
-  border-radius: 18px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-}
-
-.qr-link:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-}
-
-.qr-link:active {
-  transform: scale(0.97);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-}
-
-.qr-img {
-  display: block;
-  border-radius: 18px;
-    width: 160px;  
-}
-.notice-popup-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 99999;
-  padding: 20px;
-}
-
-.notice-popup-box {
-  position: relative;
-  width: 100%;
-  max-width: 430px;
-  background: #fff;
-  border-radius: 24px;
-  padding: 28px 24px 20px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-  text-align: center;
-}
-
-.notice-popup-close-x {
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  border: none;
-  background: transparent;
-  font-size: 30px;
-  line-height: 1;
-  cursor: pointer;
-  color: #111;
-}
-
-.notice-popup-box h3 {
-  margin: 0 0 16px;
-  font-size: 24px;
-  font-weight: 800;
-  color: #111;
-}
-
-.notice-popup-box p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #333;
-  word-break: keep-all;
-}
-
-.notice-popup-footer {
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px solid #eee;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.notice-hide-today {
-  font-size: 14px;
-  color: #666;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.notice-popup-close-btn {
-  border: none;
-  background: #4b7cff;
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-}
-.model_item {
-  position: relative;
-  z-index: 10;
-}
-#galaxyModels,
-#iphoneModels,
-#internetModels {
-  display: block !important;
 }
