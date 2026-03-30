@@ -530,17 +530,17 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem('hidePriceNoticeUntil', String(tomorrow));
     closePriceNotice();
   }
+function openRealImageModal(imgSrc) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('imageModalTarget');
+
+  if (modal && modalImg) {
+    modalImg.src = imgSrc;
+    modal.style.display = 'flex';
+  }
+}
 
 function openPriceNoticeModal(imgSrc) {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-
-    if (modal && modalImg) {
-      modalImg.src = imgSrc;
-      modal.style.display = 'flex';
-    }
-  }
-  function openImageModal(imgSrc) {
   if (shouldShowPriceNotice()) {
     showPriceNotice(imgSrc);
   } else {
