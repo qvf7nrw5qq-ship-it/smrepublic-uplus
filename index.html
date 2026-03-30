@@ -507,7 +507,7 @@ function shouldHidePriceNoticeToday() {
   return savedDate === today;
 }
 
-function openNoticeThenModal(imgSrc) {
+window.openNoticeThenModal = function(imgSrc) {
   nextModalImage = imgSrc;
 
   if (shouldHidePriceNoticeToday()) {
@@ -523,7 +523,7 @@ function openNoticeThenModal(imgSrc) {
   }
 }
 
-function closePriceNoticePopup() {
+window.closePriceNoticePopup = function() {
   const checkbox = document.getElementById("hidePriceNoticeToday");
   const popup = document.getElementById("priceNoticePopup");
 
