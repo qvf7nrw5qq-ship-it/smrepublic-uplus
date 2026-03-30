@@ -443,3 +443,36 @@ document.addEventListener('DOMContentLoaded', function () {
     openConsent(null);
   });
 });
+let nextModalImage = null;
+
+function shouldHidePriceNoticeToday() {
+  const savedDate = localStorage.getItem("hidePriceNoticeDate");
+  const today = new Date().toISOString().slice(0, 10);
+  return savedDate === today;
+}
+
+function openNoticeThenModal(imgSrc) {
+  nextModalImage = imgSrc;
+
+  if (shouldHidePriceNoticeToday()) {
+    openImageModal(nextModalImage);
+  } else {
+    document.getElementById("priceNoticePopup").style.display = "flex";
+  }
+}
+
+function closePriceNoticePopup() {
+  const checkbox = document.getElementById("hidePriceNoticeToday");
+
+  if (checkbox && checkbox.checked) {
+    const today = new Date().toISOString().slice(0, 10);
+    localStorage.setItem("hidePriceNoticeDate", today);
+  }
+
+  document.getElementById("priceNoticePopup").style.display = "none";
+
+  if (nextModalImage) {
+    openImageModal(nextModalImage);
+    nextModalImage = null;
+  }
+}
