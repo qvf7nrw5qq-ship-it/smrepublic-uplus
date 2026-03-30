@@ -223,13 +223,13 @@ target="hidden_iframe">
     </div>
 
   <div class="model_list" id="galaxyModels">
- <button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('s26.png')">Galaxy S26</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('s26plus.png')">Galaxy S26+</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('s26ultra.png')">Galaxy S26 Ultra</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('zflip.png')">Galaxy Z Flip</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('zfold.png')">Galaxy Z Fold</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('buddy.png')">Galaxy 버디4</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('monoo.png')">U+ 키즈폰무너에디션2</button>
+ <button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('s26.png')">Galaxy S26</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('s26plus.png')">Galaxy S26+</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('s26ultra.png')">Galaxy S26 Ultra</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('zflip.png')">Galaxy Z Flip</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('zfold.png')">Galaxy Z Fold</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('buddy.png')">Galaxy 버디4</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('monoo.png')">U+ 키즈폰무너에디션2</button>
 </div>
       </article>
   <article class="pcard reveal expandable-card" onclick="toggleModels('iphoneModels')">
@@ -245,13 +245,10 @@ target="hidden_iframe">
     </div>
 
   <div class="model_list" id="iphoneModels">
-<button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('iphone17.png')">iPhone 17</button>
-
-<button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('iphone17air.png')">iPhone 17 Air</button>
-
-<button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('iphone17pro.png')">iPhone 17 Pro</button>
-
-<button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('iphone17promax.png')">iPhone 17 Pro Max</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('iphone17.png')">iPhone 17</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('iphone17air.png')">iPhone 17 Air</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('iphone17pro.png')">iPhone 17 Pro</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('iphone17promax.png')">iPhone 17 Pro Max</button>
 </div>
   </article>
 
@@ -268,9 +265,9 @@ target="hidden_iframe">
     </div>
 
    <div class="model_list" id="internetModels">
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('internet1g.png')">1기가 인터넷</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('internet500.png')">500메가 인터넷</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); openNoticeThenModal('internet100.png')">100메가 인터넷</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('internet1g.png')">1기가 인터넷</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('internet500.png')">500메가 인터넷</button>
+<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('internet100.png')">100메가 인터넷</button>
 </div>
   </article>
 
@@ -565,5 +562,40 @@ window.closePriceNoticePopup = function() {
     </div>
   </div>
 </div>
+  <script>
+let selectedImage = '';
+
+function showNoticeAndOpen(img) {
+  const today = new Date().toISOString().slice(0, 10);
+  const saved = localStorage.getItem('hidePriceNoticeDate');
+
+  if (saved === today) {
+    openImageModal(img);
+    return;
+  }
+
+  selectedImage = img;
+  document.getElementById('priceNoticePopup').style.display = 'flex';
+}
+
+function closeNoticeOnly() {
+  document.getElementById('priceNoticePopup').style.display = 'none';
+}
+
+function confirmNoticeAndOpen() {
+  const hideToday = document.getElementById('hidePriceNoticeToday');
+
+  if (hideToday && hideToday.checked) {
+    const today = new Date().toISOString().slice(0, 10);
+    localStorage.setItem('hidePriceNoticeDate', today);
+  }
+
+  document.getElementById('priceNoticePopup').style.display = 'none';
+
+  if (selectedImage) {
+    openImageModal(selectedImage);
+  }
+}
+</script>
 </body>
 </html>
