@@ -210,7 +210,7 @@ target="hidden_iframe">
 
    <div class="product-grid">
 
-  <article class="pcard reveal expandable-card">
+  <article class="pcard reveal expandable-card" onclick="toggleModels('galaxyModels')">
     <div class="pcard_top">
       <span class="tag tag-hot">NEW</span>
       <img src="s.png" class="card_icon" id="galaxyImage" alt="Galaxy S26">
@@ -222,17 +222,17 @@ target="hidden_iframe">
 <button type="button" class="btn btn-primary btn-block" onclick="event.stopPropagation(); quickConnect()">혜택 확인 및 재고 확인</button>
     </div>
 
-<article class="pcard reveal expandable-card" onclick="toggleModels('galaxyModels')">
-<button type="button" class="model_item" onclick="event.stopPropagation(); document.getElementById('priceNoticePopup').style.display='flex';">TEST123</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('s26plus.png')">Galaxy S26+</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('s26ultra.png')">Galaxy S26 Ultra</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('zflip.png')">Galaxy Z Flip</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('zfold.png')">Galaxy Z Fold</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('buddy.png')">Galaxy 버디4</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('monoo.png')">U+ 키즈폰무너에디션2</button>
+  <div class="model_list" id="galaxyModels">
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('s26.png')">Galaxy S26</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('s26plus.png')">Galaxy S26+</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('s26ultra.png')">Galaxy S26 Ultra</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('zflip.png')">Galaxy Z Flip</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('zfold.png')">Galaxy Z Fold</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('buddy.png')">Galaxy 버디4</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('monoo.png')">U+ 키즈폰무너에디션2</button>
 </div>
       </article>
-  <article class="pcard reveal expandable-card">
+  <article class="pcard reveal expandable-card" onclick="toggleModels('iphoneModels')">
     <div class="pcard_top">
       <span class="tag">HOT</span>
       <img src="iphone.png" class="card_icon" id="iphoneImage" alt="iPhone">
@@ -244,15 +244,15 @@ target="hidden_iframe">
 <button type="button" class="btn btn-primary btn-block" onclick="event.stopPropagation(); quickConnect()">혜택 확인 및 재고 확인</button>
     </div>
 
-<article class="pcard reveal expandable-card" onclick="toggleModels('iphoneModels')">
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('iphone17.png')">iPhone 17</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('iphone17air.png')">iPhone 17 Air</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('iphone17pro.png')">iPhone 17 Pro</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('iphone17promax.png')">iPhone 17 Pro Max</button>
+  <div class="model_list" id="iphoneModels">
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('iphone17.png')">iPhone 17</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('iphone17air.png')">iPhone 17 Air</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('iphone17pro.png')">iPhone 17 Pro</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('iphone17promax.png')">iPhone 17 Pro Max</button>
 </div>
   </article>
 
-  <article class="pcard reveal expandable-card">
+  <article class="pcard reveal expandable-card" onclick="toggleModels('internetModels')">
     <div class="pcard_top">
       <span class="tag tag--uplus">U+</span>
       <img src="internet-tv.png" class="card_icon" id="internetImage" alt="인터넷 TV">
@@ -264,10 +264,10 @@ target="hidden_iframe">
       <button type="button" class="btn btn-primary btn-block" onclick="event.stopPropagation(); quickConnect()">결합할인 확인 및 지원금 확인</button>
     </div>
 
-<article class="pcard reveal expandable-card" onclick="toggleModels('internetModels')">
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('internet1g.png')">1기가 인터넷</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('internet500.png')">500메가 인터넷</button>
-<button type="button" class="model_item" onclick="event.stopPropagation(); showNoticeAndOpen('internet100.png')">100메가 인터넷</button>
+   <div class="model_list" id="internetModels">
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('internet1g.png')">1기가 인터넷</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('internet500.png')">500메가 인터넷</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('internet100.png')">100메가 인터넷</button>
 </div>
   </article>
 
@@ -278,30 +278,31 @@ target="hidden_iframe">
  <section class="section qr_section">
   <div class="container">
     <div class="section__head">
-      <h2 class="section__title">공식 채널 및 친구 등록</h2>
-      <p class="section__desc">QR를 클릭하거나 QR을 스캔하세요.</p>
+      <h2 class="section__title">공식 채널 및 사전 등록</h2>
+      <p class="section__desc">QR이미지를 클릭하거나 QR을 스캔하세요.</p>
     </div>
 
    <div class="qr_grid">
 
 <article class="qr_card">
-<div class="qr_badge">🎁 친구 등록</div>
-<h3 class="qr_title">U+ 고객 친구 등록</h3>
-<p class="qr_desc">친구 등록시 선물드립니다.</p>
+<div class="qr_badge">🎁 사전 등록</div>
+<h3 class="qr_title">U+ 고객 사전 등록</h3>
+<p class="qr_desc">등록시 케이스 및 필름 선물드립니다.</p>
 <div class="qr_frame">
- <a href="https://ucrm.lguplus.co.kr/mbl/v2/rcmd/moveInfo?param=c20wMzI4MSYyMDI2MDMyNzA1MjM1MiZRUkNEXw==" target="_blank" class="qr-link">
-  <img src="smucrm.jpg" alt="친구 등록 QR" class="qr-img">
-</a>
+  <a href="https://ucrm.lguplus.co.kr/mbl/v2/rcmd/moveInfo?param=c20wODAyJjIwMjMwNTEzMTExNzAxJlFSQ0Rf" target="_blank">
+    <img src="songucrm.jpg" alt="송산 ucrm" class="ucrm_img">
+  </a>
 </div>
 </article>
 
 <article class="qr_card">
 <div class="qr_badge">📍 방문 혜택</div>
-<h3 class="qr_title">안산 상권</h3>
+<h3 class="qr_title">화성 상권</h3>
 <p class="qr_desc">매장 위치 및 방문 혜택 확인</p>
 <div class="qr_frame">
-  <a href="https://map.naver.com/p/entry/place/1940502304?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202603271423&locale=ko&svcName=map_pcv5&searchType=place&lng=126.8510121&lat=37.3077860&c=15.00,0,0,0,dh="_blank">
-    <img src="qr-an.jpg" alt="안산 QR" class="qr_img">
+  <a href="https://map.naver.com/p/search/%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4%20%EC%83%88%EC%86%94%EB%8F%99%EC%A0%90/place/1888918869?placePath=?abtExp=NEW-PLACE-SEARCH%3A3&bk_query=%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4%20%EC%83%88%EC%86%94%EB%8F%99%EC%A0%90&entry=pll&from=nx&fromNxList=true&searchType=place
+" target="_blank">
+    <img src="qr-song.jpg" alt="화성 QR" class="qr_img">
   </a>
 </div>
 </article
@@ -343,9 +344,9 @@ target="hidden_iframe">
       </div>
 
      <div class="modal__list">
-<a class="region" href="tel:031-418-9241">
-  <div class="region_name">안산</div>
-  <div class="region_num">031-418-9241</div>
+<a class="region" href="tel:031-356-3774">
+  <div class="region_name">화성</div>
+  <div class="region_num">031-356-3774</div>
 </a>
 </div>
       
@@ -495,107 +496,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
- <script>
-let nextModalImage = null;
-
-function shouldHidePriceNoticeToday() {
-  const savedDate = localStorage.getItem("hidePriceNoticeDate");
-  const today = new Date().toISOString().slice(0, 10);
-  return savedDate === today;
-}
-
-window.openNoticeThenModal = function(imgSrc) {
-  nextModalImage = imgSrc;
-
-  if (shouldHidePriceNoticeToday()) {
-    openImageModal(nextModalImage);
-    return;
-  }
-
-  const popup = document.getElementById("priceNoticePopup");
-  if (popup) {
-    popup.style.display = "flex";
-  } else {
-    alert("안내 팝업을 찾을 수 없습니다.");
-  }
-}
-
-window.closePriceNoticePopup = function() {
-  const checkbox = document.getElementById("hidePriceNoticeToday");
-  const popup = document.getElementById("priceNoticePopup");
-
-  if (checkbox && checkbox.checked) {
-    const today = new Date().toISOString().slice(0, 10);
-    localStorage.setItem("hidePriceNoticeDate", today);
-  }
-
-  if (popup) {
-    popup.style.display = "none";
-  }
-
-  if (nextModalImage) {
-    openImageModal(nextModalImage);
-    nextModalImage = null;
-  }
-}
-</script>
-
-<div id="priceNoticePopup" class="notice-popup-overlay" style="display:none;">
-  <div class="notice-popup-box">
-    <button class="notice-popup-close-x" onclick="closePriceNoticePopup()">×</button>
-
-    <h3>안내사항</h3>
-
-    <p>
-      안내된 금액은 매장 내방 개통 기준이며,<br>
-      온라인 판매가가 아닙니다.<br>
-      자세한 조건은 상담을 통해 안내드립니다.
-    </p>
-
-    <div class="notice-popup-footer">
-      <label class="notice-hide-today">
-        <input type="checkbox" id="hidePriceNoticeToday">
-        오늘 하루 안 보기
-      </label>
-
-      <button class="notice-popup-close-btn" onclick="closePriceNoticePopup()">닫기</button>
-    </div>
-  </div>
-</div>
-  <script>
-let selectedImage = '';
-
-function showNoticeAndOpen(img) {
-  const today = new Date().toISOString().slice(0, 10);
-  const saved = localStorage.getItem('hidePriceNoticeDate');
-
-  if (saved === today) {
-    openImageModal(img);
-    return;
-  }
-
-  selectedImage = img;
-  document.getElementById('priceNoticePopup').style.display = 'flex';
-}
-
-function closeNoticeOnly() {
-  document.getElementById('priceNoticePopup').style.display = 'none';
-}
-
-function confirmNoticeAndOpen() {
-  const hideToday = document.getElementById('hidePriceNoticeToday');
-
-  if (hideToday && hideToday.checked) {
-    const today = new Date().toISOString().slice(0, 10);
-    localStorage.setItem('hidePriceNoticeDate', today);
-  }
-
-  document.getElementById('priceNoticePopup').style.display = 'none';
-
-  if (selectedImage) {
-    openImageModal(selectedImage);
-  }
-}
 </script>
 </body>
 </html>
