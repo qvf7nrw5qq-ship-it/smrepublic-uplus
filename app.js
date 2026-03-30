@@ -375,8 +375,8 @@ function quickConnect() {
     });
   }
 }
-let pendingImageSrc = null;
-let bypassPriceNotice = false;
+let noticePendingImageSrc = null;
+let noticeBypassPriceNotice = false;
 
 function shouldShowPriceNotice() {
 const saved = localStorage.getItem('hidePriceNoticeUntil_v2');
@@ -388,11 +388,11 @@ function closePriceNotice() {
   const popup = document.getElementById('priceNoticePopup');
   if (popup) popup.style.display = 'none';
 
-  if (pendingImageSrc) {
-    bypassPriceNotice = true;
-    openImageModal(pendingImageSrc);
-    pendingImageSrc = null;
-  }
+if (noticePendingImageSrc) {
+  noticeBypassPriceNotice = true;
+  openImageModal(noticePendingImageSrc);
+  noticePendingImageSrc = null;
+}
 }
 
 function hidePriceNoticeToday() {
@@ -402,8 +402,8 @@ localStorage.setItem('hidePriceNoticeUntil_v2', String(tomorrow));
 }
 function openImageModal(imageSrc) {
   closeImageModal();
-if (!bypassPriceNotice && shouldShowPriceNotice()) {
-    pendingImageSrc = imageSrc;
+if (!noticeBypassPriceNotice && shouldShowPriceNotice()) {
+  noticePendingImageSrc = imageSrc;
     document.getElementById('priceNoticePopup').style.display = 'flex';
     return;
   }
