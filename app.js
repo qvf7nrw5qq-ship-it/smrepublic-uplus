@@ -379,7 +379,7 @@ let pendingImageSrc = null;
 let bypassPriceNotice = false;
 
 function shouldShowPriceNotice() {
-  const saved = localStorage.getItem('hidePriceNoticeUntil');
+const saved = localStorage.getItem('hidePriceNoticeUntil_v2');
   if (!saved) return true;
   return Date.now() > Number(saved);
 }
@@ -397,7 +397,7 @@ function closePriceNotice() {
 
 function hidePriceNoticeToday() {
   const tomorrow = Date.now() + (24 * 60 * 60 * 1000);
-  localStorage.setItem('hidePriceNoticeUntil', String(tomorrow));
+localStorage.setItem('hidePriceNoticeUntil_v2', String(tomorrow));
   closePriceNotice();
 }
 function openImageModal(imageSrc) {
