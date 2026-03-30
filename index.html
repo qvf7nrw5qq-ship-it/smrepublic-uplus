@@ -498,7 +498,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-  let nextModalImage = null;
+ <script>
+let nextModalImage = null;
 
 function shouldHidePriceNoticeToday() {
   const savedDate = localStorage.getItem("hidePriceNoticeDate");
@@ -514,26 +515,35 @@ function openNoticeThenModal(imgSrc) {
     return;
   }
 
-  document.getElementById("priceNoticePopup").style.display = "flex";
+  const popup = document.getElementById("priceNoticePopup");
+  if (popup) {
+    popup.style.display = "flex";
+  } else {
+    alert("안내 팝업을 찾을 수 없습니다.");
+  }
 }
 
 function closePriceNoticePopup() {
   const checkbox = document.getElementById("hidePriceNoticeToday");
+  const popup = document.getElementById("priceNoticePopup");
 
   if (checkbox && checkbox.checked) {
     const today = new Date().toISOString().slice(0, 10);
     localStorage.setItem("hidePriceNoticeDate", today);
   }
 
-  document.getElementById("priceNoticePopup").style.display = "none";
+  if (popup) {
+    popup.style.display = "none";
+  }
 
   if (nextModalImage) {
     openImageModal(nextModalImage);
     nextModalImage = null;
   }
 }
-  </script>
-  <div id="priceNoticePopup" class="notice-popup-overlay" style="display:none;">
+</script>
+
+<div id="priceNoticePopup" class="notice-popup-overlay" style="display:none;">
   <div class="notice-popup-box">
     <button class="notice-popup-close-x" onclick="closePriceNoticePopup()">×</button>
 
