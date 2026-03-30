@@ -498,7 +498,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-</script>
+  let nextModalImage = null;
+
+function shouldHidePriceNoticeToday() {
+  const savedDate = localStorage.getItem("hidePriceNoticeDate");
+  const today = new Date().toISOString().slice(0, 10);
+  return savedDate === today;
+}
+
+function openNoticeThenModal(imgSrc) {
+  nextModalImage = imgSrc;
+
+  if (shouldHidePriceNoticeToday()) {
+    openImageModal(nextModalImage);
+    return;
+  }
+
+  document.getElementById("priceNoticePopup").style.display = "flex";
+}
+
+function closePriceNoticePopup() {
+  const checkbox = document.getElementById("hidePriceNoticeToday");
+
+  if (checkbox && checkbox.checked) {
+    const today = new Date().toISOString().slice(0, 10);
+    localStorage.setItem("hidePriceNoticeDate", today);
+  }
+
+  document.getElementById("priceNoticePopup").style.display = "none";
+
+  if (nextModalImage) {
+    openImageModal(nextModalImage);
+    nextModalImage = null;
+  }
+}
+  </script>
   <div id="priceNoticePopup" class="notice-popup-overlay" style="display:none;">
   <div class="notice-popup-box">
     <button class="notice-popup-close-x" onclick="closePriceNoticePopup()">×</button>
