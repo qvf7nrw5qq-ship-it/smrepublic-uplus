@@ -2262,20 +2262,3 @@ padding:80px 20px;
   position: relative;
   z-index: 10;
 }
-.model_list {
-  position: relative !important;
-  z-index: 9999 !important;
-  pointer-events: auto !important;
-}
-
-.model_item {
-  position: relative !important;
-  z-index: 10000 !important;
-  pointer-events: auto !important;
-  cursor: pointer !important;
-}
-
-.expandable-card::before,
-.expandable-card::after {
-  pointer-events: none !important;
-}
