@@ -222,19 +222,14 @@ target="hidden_iframe">
 <button type="button" class="btn btn-primary btn-block" onclick="event.stopPropagation(); quickConnect()">혜택 확인 및 재고 확인</button>
     </div>
 
-<button type="button" class="model_item"
-onclick="event.stopPropagation(); openCalcModal('s26')">
-Galaxy S26
-</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('s26plus')">Galaxy S26+</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('s26ultra')">Galaxy S26 Ultra</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('s25')">Galaxy S25</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('s25plus')">Galaxy S25+</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('s25ultra')">Galaxy S25 Ultra</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('flip7')">Galaxy Z Flip7</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('fold7')">Galaxy Z Fold7</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('s25fe')">Galaxy S25 FE</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('s25edge')">Galaxy S25 Edge</button>
+  <div class="model_list" id="galaxyModels">
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('s26.png')">Galaxy S26</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('s26plus.png')">Galaxy S26+</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('s26ultra.png')">Galaxy S26 Ultra</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('zflip.png')">Galaxy Z Flip</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('zfold.png')">Galaxy Z Fold</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('buddy.png')">Galaxy 버디4</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('monoo.png')">U+ 키즈폰무너에디션2</button>
 </div>
       </article>
   <article class="pcard reveal expandable-card" onclick="toggleModels('iphoneModels')">
@@ -249,33 +244,14 @@ Galaxy S26
 <button type="button" class="btn btn-primary btn-block" onclick="event.stopPropagation(); quickConnect()">혜택 확인 및 재고 확인</button>
     </div>
 
- <div class="model_list" id="iphoneModels">
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('iphone17')">iPhone 17</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('iphone17air')">iPhone 17 Air</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('iphone17pro')">iPhone 17 Pro</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('iphone17promax')">iPhone 17 Pro Max</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('iphone17e')">iPhone 17e</button>
+  <div class="model_list" id="iphoneModels">
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('iphone17.png')">iPhone 17</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('iphone17air.png')">iPhone 17 Air</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('iphone17pro.png')">iPhone 17 Pro</button>
+  <button type="button" class="model_item" onclick="event.stopPropagation(); openImageModal('iphone17promax.png')">iPhone 17 Pro Max</button>
 </div>
   </article>
-<article class="pcard reveal expandable-card" onclick="toggleModels('budgetModels')">
-  <div class="pcard_top">
-    <span class="tag">BEST</span>
-    <img src="buddy4.png" class="card_icon" alt="실속폰 키즈폰">
-    <h3 class="pcard_title">실속폰 · 키즈폰</h3>
-    <p class="pcard_sub">가성비/학생/어르신 추천</p>
-  </div>
 
-  <div class="pcard_bottom">
-    <button type="button" class="btn btn-primary btn-block" onclick="event.stopPropagation(); openCalcModal('buddy4')">혜택 확인 및 재고 확인</button>
-  </div>
-
-  <div class="model_list" id="budgetModels">
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('buddy4')">Galaxy 버디4</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('monoo2')">키즈폰 무너에디션2</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('a17')">Galaxy A17</button>
-  <button type="button" class="model_item" onclick="event.stopPropagation(); openCalcModal('a36')">Galaxy A36</button>
-</div>
-</article>
   <article class="pcard reveal expandable-card" onclick="toggleModels('internetModels')">
     <div class="pcard_top">
       <span class="tag tag--uplus">U+</span>
@@ -309,12 +285,12 @@ Galaxy S26
    <div class="qr_grid">
 
 <article class="qr_card">
-<div class="qr_badge">🎁 친구 등록</div>
-<h3 class="qr_title">U+ 고객 친구 등록</h3>
-<p class="qr_desc">등록시 선물드립니다.</p>
+<div class="qr_badge">🎁 사전 등록</div>
+<h3 class="qr_title">U+ 고객 사전 등록</h3>
+<p class="qr_desc">등록시 케이스 및 필름 선물드립니다.</p>
 <div class="qr_frame">
-  <a href="https://ucrm.lguplus.co.kr/mbl/v2/rcmd/moveInfo?param=c20wMzI4MSYyMDI2MDMyNzA1MjM1MiZRUkNEXw==" target="_blank">
-    <img src="smucrm.jpg" alt=" ucrm" class="ucrm_img">
+  <a href="https://ucrm.lguplus.co.kr/mbl/v2/rcmd/moveInfo?param=c20wODAyJjIwMjMwNTEzMTExNzAxJlFSQ0Rf" target="_blank">
+    <img src="songucrm.jpg" alt="송산 ucrm" class="ucrm_img">
   </a>
 </div>
 </article>
@@ -520,60 +496,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-  </script>
-  
-  <div id="calcModal" class="calc-modal" style="display:none;">
-  <div class="calc-modal__box">
-
-    <button class="calc-modal__close" onclick="closeCalcModal()">×</button>
-
-    <div class="calc-grid">
-
-      <div class="calc-left">
-        <img id="calcImage" src="" class="calc-phone-img">
-        <h3 id="calcModelName">모델명</h3>
-      </div>
-
-      <div class="calc-center">
-        <h4>가입 유형 선택</h4>
-        <div class="join-type">
-          <button id="typeMnpBtn" class="join-btn active" onclick="setCalcType('mnp')">번호 이동</button>
-          <button id="typeChangeBtn" class="join-btn" onclick="setCalcType('change')">기기 변경</button>
-        </div>
-      </div>
-
-      <div class="calc-right">
-        <h3 id="summaryModelName">모델명</h3>
-        <p id="typeText">LGU+ | 번호이동 | 공시지원금</p>
-
-        <div class="price-block">
-          <div class="price-line">
-            <span>출고가</span>
-            <strong id="retailPrice">0원</strong>
-          </div>
-
-          <div class="price-line">
-            <span>공시 지원금</span>
-            <strong id="officialSupport">0원</strong>
-          </div>
-
-          <div class="price-line">
-            <span>추가 지원</span>
-            <strong id="extraDiscount">0원</strong>
-          </div>
-
-          <hr>
-
-          <div class="price-line total">
-            <span>최종 기기값</span>
-            <strong id="devicePrice">0원</strong>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-  <script src="app.js"></script>
+</script>
 </body>
 </html>
