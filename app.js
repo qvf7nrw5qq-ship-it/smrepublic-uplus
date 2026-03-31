@@ -702,3 +702,23 @@ function openCalcModal(deviceKey) {
 
   renderCalcModal();
 }
+function openCalcModal(deviceKey) {
+  const modal = document.getElementById('calcModal');
+
+  if (!modal) {
+    alert('calcModal 없음');
+    return;
+  }
+
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+
+  renderCalcModal();
+}
+function closeCalcModal() {
+  const modal = document.getElementById('calcModal');
+  if (!modal) return;
+
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
