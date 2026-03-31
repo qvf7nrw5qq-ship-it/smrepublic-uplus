@@ -2264,3 +2264,22 @@ padding:80px 20px;
     padding: 18px;
   }
 }
+.model_list{
+  display: none;
+  margin-top: 14px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.model_list.open{
+  display: flex;
+}
+
+.model_item{
+  border: 1px solid #ececec;
+  background: #fff7fb;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
