@@ -670,3 +670,17 @@ function toggleModels(listId) {
 
   target.classList.toggle('open');
 }
+function openCalcModal(deviceKey) {
+  currentDeviceKey = deviceKey;
+
+  const modal = document.getElementById('calcModal');
+  if (!modal) {
+    console.error('calcModal 없음');
+    return;
+  }
+
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+
+  renderCalcModal();
+}
