@@ -2160,3 +2160,107 @@ padding:80px 20px;
   transform: scale(0.96);
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
+.calc-modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.calc-modal__box{
+  position: relative;
+  width: min(1100px, 94vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+}
+
+.calc-modal__close{
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  border: 0;
+  background: transparent;
+  font-size: 34px;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.calc-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.calc-left,
+.calc-center,
+.calc-right{
+  background: #fff;
+}
+
+.calc-phone-img{
+  width: 100%;
+  max-width: 220px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.join-type{
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.join-btn{
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.join-btn.active{
+  border: 2px solid #4e7cff;
+  background: #f5f8ff;
+  color: #2f62ff;
+}
+
+.price-block{
+  border-top: 1px solid #ececec;
+  margin-top: 14px;
+  padding-top: 14px;
+}
+
+.price-line,
+.price-line.total{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.price-line.total{
+  font-size: 22px;
+  font-weight: 800;
+}
+
+@media (max-width: 900px){
+  .calc-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .calc-modal__box{
+    width: 96vw;
+    padding: 18px;
+  }
+}
