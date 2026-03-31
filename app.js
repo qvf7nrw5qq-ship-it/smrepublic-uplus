@@ -443,3 +443,25 @@ document.addEventListener('DOMContentLoaded', function () {
     openConsent(null);
   });
 });
+// ===== 계산 팝업 =====
+const DEVICE_DATA = { ... }  // 내가 준 코드 통째로
+
+let currentDeviceKey = 's26';
+let currentJoinType = 'mnp';
+
+function formatWon(num){ ... }
+
+function openCalcModal(deviceKey){ ... }
+
+function closeCalcModal(){ ... }
+
+function setCalcType(type){ ... }
+
+function renderCalcModal(){ ... }
+
+document.addEventListener('click', function(e){
+  const modal = document.getElementById('calcModal');
+  if (modal && e.target === modal) {
+    closeCalcModal();
+  }
+});
