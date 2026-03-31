@@ -658,12 +658,14 @@ document.getElementById('typeText').textContent = `LGU+ | ${typeLabel} | 공시�
   if (changeBtn) changeBtn.classList.toggle('active', currentJoinType === 'change');
 }
 
-document.addEventListener('click', function (e) {
-  const modal = document.getElementById('calcModal');
-  if (modal && e.target === modal) {
-    closeCalcModal();
-  }
-});
+const calcModalEl = document.getElementById('calcModal');
+if (calcModalEl) {
+  calcModalEl.addEventListener('click', function (e) {
+    if (e.target === calcModalEl) {
+      closeCalcModal();
+    }
+  });
+}
 function toggleModels(listId) {
   const target = document.getElementById(listId);
   if (!target) return;
