@@ -567,5 +567,57 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </div>
 </div>
+  <div id="calcModal" class="calc-modal" style="display:none;">
+  <div class="calc-modal__box">
+
+    <button class="calc-modal__close" onclick="closeCalcModal()">×</button>
+
+    <div class="calc-grid">
+
+      <div class="calc-left">
+        <img id="calcImage" src="" class="calc-phone-img">
+        <h3 id="calcModelName">모델명</h3>
+      </div>
+
+      <div class="calc-center">
+        <h4>가입 유형 선택</h4>
+        <div class="join-type">
+          <button id="typeMnpBtn" class="join-btn active" onclick="setCalcType('mnp')">번호 이동</button>
+          <button id="typeChangeBtn" class="join-btn" onclick="setCalcType('change')">기기 변경</button>
+        </div>
+      </div>
+
+      <div class="calc-right">
+        <h3 id="summaryModelName">모델명</h3>
+        <p id="typeText">LGU+ | 번호이동 | 공시지원금</p>
+
+        <div class="price-block">
+          <div class="price-line">
+            <span>출고가</span>
+            <strong id="retailPrice">0원</strong>
+          </div>
+
+          <div class="price-line">
+            <span>공시 지원금</span>
+            <strong id="officialSupport">0원</strong>
+          </div>
+
+          <div class="price-line">
+            <span>추가 지원</span>
+            <strong id="extraDiscount">0원</strong>
+          </div>
+
+          <hr>
+
+          <div class="price-line total">
+            <span>최종 기기값</span>
+            <strong id="devicePrice">0원</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 </body>
 </html>
