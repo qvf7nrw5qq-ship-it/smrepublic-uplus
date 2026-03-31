@@ -684,3 +684,19 @@ function openCalcModal(deviceKey) {
 
   renderCalcModal();
 }
+function openCalcModal(deviceKey) {
+  console.log('열림:', deviceKey);
+
+  currentDeviceKey = deviceKey;
+
+  const modal = document.getElementById('calcModal');
+  if (!modal) {
+    alert('calcModal 없음');
+    return;
+  }
+
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+
+  renderCalcModal();
+}
