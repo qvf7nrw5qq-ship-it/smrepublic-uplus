@@ -375,38 +375,9 @@ function quickConnect() {
     });
   }
 }
-let noticePendingImageSrc = null;
-let noticeBypassPriceNotice = false;
-
-function shouldShowPriceNotice() {
-const saved = localStorage.getItem('hidePriceNoticeUntil_v2');
-  if (!saved) return true;
-  return Date.now() > Number(saved);
-}
-
-function closePriceNotice() {
-  const popup = document.getElementById('priceNoticePopup');
-  if (popup) popup.style.display = 'none';
-
-if (noticePendingImageSrc) {
-  noticeBypassPriceNotice = true;
-  openImageModal(noticePendingImageSrc);
-  noticePendingImageSrc = null;
-}
-}
-
-function hidePriceNoticeToday() {
-  const tomorrow = Date.now() + (24 * 60 * 60 * 1000);
-localStorage.setItem('hidePriceNoticeUntil_v2', String(tomorrow));
-  closePriceNotice();
-}
 function openImageModal(imageSrc) {
   closeImageModal();
-if (!noticeBypassPriceNotice && shouldShowPriceNotice()) {
-  noticePendingImageSrc = imageSrc;
-    document.getElementById('priceNoticePopup').style.display = 'flex';
-    return;
-  }
+
   const overlay = document.createElement("div");
   overlay.id = "runtimeImageModal";
   overlay.style.position = "fixed";
