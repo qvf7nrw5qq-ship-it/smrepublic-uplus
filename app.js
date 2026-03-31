@@ -664,3 +664,9 @@ document.addEventListener('click', function (e) {
     closeCalcModal();
   }
 });
+function toggleModels(listId) {
+  const target = document.getElementById(listId);
+  if (!target) return;
+
+  target.classList.toggle('open');
+}
