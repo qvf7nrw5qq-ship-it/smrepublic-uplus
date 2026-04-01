@@ -187,6 +187,7 @@ target="hidden_iframe">
         <div class="quick-form__agree">
           <label class="quick-form__check">
            <input type="checkbox" id="agree" name="agree" value="동의" required>
+            <input type="hidden" id="agreeValue" name="agreeValue">
             <span>개인정보 수집 및 이용에 동의합니다. (필수)</span>
           </label>
 <a href="#" id="quickPolicyBtn">약관 보기</a>
@@ -504,6 +505,9 @@ form.addEventListener("submit", function (e) {
     alert("개인정보 수집 및 이용에 동의해야 신청 가능합니다.");
     return;
   }
+    const hiddenAgree = document.getElementById("agreeValue");
+  if (hiddenAgree) {
+    hiddenAgree.value = agree.checked ? "동의" : "미동의";
 });
   let submitted = false;
 
