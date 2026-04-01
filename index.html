@@ -186,7 +186,7 @@ target="hidden_iframe">
 
         <div class="quick-form__agree">
           <label class="quick-form__check">
-            <input type="checkbox" id="agree" required>
+           <input type="checkbox" id="agree" name="agree" value="동의" required>
             <span>개인정보 수집 및 이용에 동의합니다. (필수)</span>
           </label>
 <a href="#" id="quickPolicyBtn">약관 보기</a>
@@ -344,7 +344,7 @@ target="hidden_iframe">
           <p class="cta-box__desc">지역 선택 후 바로 전화 연결됩니다.</p>
         </div>
         <div class="cta-box__actions">
-          <button class="btn btn--primary" id="btnCallBottom">매장 전화</button>
+          <button class="btn btn--primary" id="btnCallBottom">전화 상담</button>
          <a class="btn btn--kakao consent-kakao" href="#" data-href="http://pf.kakao.com/_xlxfehX">카카오톡 상담</a>
         </div>
       </div>
@@ -352,7 +352,7 @@ target="hidden_iframe">
 
   <!-- FLOATING -->
   <div class="floating">
-    <button class="fab" id="btnCallFab" aria-label="매장 전화 열기">📞</button>
+    <button class="fab" id="btnCallFab" aria-label="전화 열기">📞</button>
  <a class="fab fab--kakao consent-kakao" href="#" data-href="http://pf.kakao.com/_xlxfehX" aria-label="카카오톡 상담">💬</a>
     <button class="fab fab--top" id="btnTop" aria-label="상단으로">↑</button>
   </div>
@@ -361,19 +361,19 @@ target="hidden_iframe">
   <div class="modal" id="callModal" aria-hidden="true">
     <div class="modal__backdrop" id="modalClose"></div>
 
-    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="매장 전화 선택">
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="전화 선택">
       <div class="modal__head">
         <div>
-          <div class="modal__title">매장 전화 연결</div>
+          <div class="modal__title">전화 연결</div>
     
         </div>
         <button class="modal__x" id="modalX" aria-label="닫기">✕</button>
       </div>
 
      <div class="modal__list">
-<a class="region" href="tel:031-356-3774">
-  <div class="region_name">화성</div>
-  <div class="region_num">031-356-3774</div>
+<a class="region" href="tel:010-7577-9241">
+  <div class="region_name">전화</div>
+  <div class="region_num">010-7577-9241</div>
 </a>
 </div>
       
@@ -494,11 +494,17 @@ target="hidden_iframe">
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("quickConsultForm");
+  const agree = document.getElementById("agree");
   const iframe = document.getElementById("hidden_iframe");
   const submitBtn = document.querySelector(".quick-form__submit");
-
   if (!form || !iframe) return;
-
+form.addEventListener("submit", function (e) {
+  if (!agree || !agree.checked) {
+    e.preventDefault();
+    alert("개인정보 수집 및 이용에 동의해야 신청 가능합니다.");
+    return;
+  }
+});
   let submitted = false;
 
   form.addEventListener("submit", function () {
