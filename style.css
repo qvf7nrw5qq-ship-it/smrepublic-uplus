@@ -2160,3 +2160,25 @@ padding:80px 20px;
   transform: scale(0.96);
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
+.badge {
+  display: inline-block;
+  background: #ff3b30;
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.pulse {
+  color: #ff3b30;
+  font-weight: 700;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
