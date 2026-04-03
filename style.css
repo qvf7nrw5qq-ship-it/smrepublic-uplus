@@ -2199,3 +2199,11 @@ padding:80px 20px;
   50% {transform: scale(1.08);}
   100% {transform: scale(1);}
 }
+@media (max-width: 768px){
+  .slider__slide img{
+    width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+    aspect-ratio:auto !important;
+  }
+}
