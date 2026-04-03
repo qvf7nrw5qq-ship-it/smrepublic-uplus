@@ -2182,3 +2182,20 @@ padding:80px 20px;
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+.internet-text {
+  color: #FF3B3B;
+  font-weight: 900;
+}
+
+.money-text {
+  color: #FF0000;
+  font-weight: 900;
+  font-size: 1.1em;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.08);}
+  100% {transform: scale(1);}
+}
