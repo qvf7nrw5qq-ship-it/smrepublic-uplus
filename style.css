@@ -2220,3 +2220,30 @@ padding:80px 20px;
   height:auto !important;
   object-fit:contain !important;
 }
+@media (max-width: 768px){
+  .slider,
+  .slider__viewport,
+  .slider__track,
+  .slider__slide{
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .slider__slide img{
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+}
+@media (max-width: 768px){
+  .hero,
+  .hero__inner{
+    display: block !important;
+    grid-template-columns: 1fr !important;
+  }
+}
