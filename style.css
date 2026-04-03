@@ -2207,3 +2207,16 @@ padding:80px 20px;
     aspect-ratio:auto !important;
   }
 }
+.slider__viewport{
+  overflow: visible !important;
+}
+
+.slider__slide{
+  height: auto !important;
+}
+
+.slider__slide img{
+  width:100% !important;
+  height:auto !important;
+  object-fit:contain !important;
+}
