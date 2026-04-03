@@ -204,9 +204,9 @@ display:none;
 .slider__slide{width:100%}
 .slider__slide img{
   width:100%;
+  height:auto;
   display:block;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit:contain;
 }
 .slider__nav{
   position:absolute;
