@@ -2247,3 +2247,15 @@ padding:80px 20px;
     grid-template-columns: 1fr !important;
   }
 }
+.product-card .btn{
+  display: inline-block;
+  width: auto;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  box-shadow: none;
+}
