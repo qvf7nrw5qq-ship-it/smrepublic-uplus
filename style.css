@@ -2326,8 +2326,23 @@ padding:80px 20px;
   color: #ff2b2b;
 }
 .card {
-  height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  min-height: 180px;
+  height: auto;
+}
+
+.card__title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.card__desc {
+  font-size: 18px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.card__desc .strong {
+  color: red;
+  font-weight: 800;
 }
