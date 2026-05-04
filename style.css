@@ -2325,3 +2325,9 @@ padding:80px 20px;
   font-weight: 700;
   color: #ff2b2b;
 }
+.card {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
