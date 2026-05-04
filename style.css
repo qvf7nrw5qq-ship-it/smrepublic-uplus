@@ -2346,3 +2346,9 @@ padding:80px 20px;
   color: red;
   font-weight: 800;
 }
+.card {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
